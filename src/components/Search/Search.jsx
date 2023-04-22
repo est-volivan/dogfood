@@ -1,12 +1,17 @@
 import './index.css';
-import SearchImg from "./ic-search.svg"
+import {ReactComponent as SearchIcon} from "./ic-search.svg";
 
-function Search({onInput}) {
+function Search({onSubmit, onInput}) {
+  const handleInput = (e) => {
+      onInput(e.target.value);
+  }
     return (
-      <form className='search'>
-          <input type="text" className='search__input' placeholder='Поиск' onChange={onInput}/>
-          <button type='button' className='search__btn'><img src={SearchImg} /></button>
-      </form>
+      <form className='search' onSubmit={onSubmit}>
+            <input type='text' className='search__input' placeholder='Поиск' onInput={handleInput}/>
+            <button className='search__btn'>
+              <SearchIcon/>
+            </button>
+        </form>
  
     )
 }

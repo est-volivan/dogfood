@@ -98,6 +98,9 @@
     padding: 0;
     display: flex;
 }
+.card__favorite_is-active{
+    background-color: #F44336;
+}
 
 .card__cart {
     margin-top: auto;
